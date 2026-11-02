@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);   // LED_BUILTIN = pin 13 on the Uno
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
   Serial.println("Mapper alive");
 }
