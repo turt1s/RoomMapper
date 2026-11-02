@@ -2,14 +2,12 @@
 #include <unity.h>
 #include "Adafruit_VL53L1X.h"
 
-#define IRQ_PIN 2
-#define XSHUT_PIN 3
-
 // VL53L1X spec: roughly 40mm min, 4000mm max in long-distance mode
 #define MIN_VALID_MM 1
 #define MAX_VALID_MM 4000
 
-Adafruit_VL53L1X vl53 = Adafruit_VL53L1X(XSHUT_PIN, IRQ_PIN);
+// XSHUT and IRQ aren't wired -- dataReady() polls over I2C instead
+Adafruit_VL53L1X vl53 = Adafruit_VL53L1X();
 
 bool sensorReady = false;  // set once begin() succeeds
 bool rangingStarted = false;

@@ -1,10 +1,8 @@
 #include <Arduino.h>
 #include "Adafruit_VL53L1X.h"
 
-#define IRQ_PIN 2
-#define XSHUT_PIN 3
-
-Adafruit_VL53L1X vl53 = Adafruit_VL53L1X(XSHUT_PIN, IRQ_PIN);
+// XSHUT and IRQ aren't wired -- dataReady() polls over I2C instead
+Adafruit_VL53L1X vl53 = Adafruit_VL53L1X();
 
 void setup() {
   Serial.begin(115200);
