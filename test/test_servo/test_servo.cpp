@@ -61,6 +61,8 @@ void setup() {
     RUN_TEST(test_servo_full_range_sweep);
     UNITY_END();
 
+    testServo.write(90);
+    delay(500); // let the horn reach centre before detaching
     testServo.detach();
 }
 
