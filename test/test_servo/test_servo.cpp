@@ -2,7 +2,7 @@
 #include <unity.h>
 #include <Servo.h>
 
-#define SERVO_PIN 9
+#define SERVO_PIN 12
 
 Servo testServo;
 
@@ -12,7 +12,7 @@ void tearDown(void) {}
 
 void test_servo_attaches_to_pin(void) {
     testServo.attach(SERVO_PIN);
-    TEST_ASSERT_TRUE_MESSAGE(testServo.attached(), "Servo did not attach to pin 9");
+    TEST_ASSERT_TRUE_MESSAGE(testServo.attached(), "Servo did not attach to pin 12");
 }
 
 // A hobby servo has no position feedback. read() only returns the last
