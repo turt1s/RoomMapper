@@ -12,7 +12,7 @@ Still a work in progress.
 - MPU-6050
 - L298N motor driver + 2 DC motors with encoders
 - LM2596 buck converter
-- 6× AA battery pack
+- 6x AA battery pack
 
 ![Wiring diagram](./docs/breadboard_diagram.png)
 
@@ -27,13 +27,13 @@ The breadboard has a 5V rail and a GND rail, both fed by the buck converter.
 | From | To |
 | --- | --- |
 | Battery + | Switch, then L298N 12V and buck IN+ |
-| Battery − | L298N GND and buck IN− |
+| Battery - | L298N GND and buck IN- |
 | Buck OUT+ (set to 5V) | 5V rail |
-| Buck OUT− | GND rail |
+| Buck OUT- | GND rail |
 | 5V rail | Arduino 5V |
 | GND rail | Arduino GND |
 
-When the Arduino is plugged into USB with the battery in, disconnect the 5V rail → Arduino 5V wire so the buck and USB don't both power the board.
+When the Arduino is plugged into USB with the battery in, disconnect the wire from the 5V rail to Arduino 5V so the buck and USB don't both power the board.
 
 ### L298N motor driver
 

@@ -4,7 +4,7 @@
 const uint8_t L_A = 2, L_B = 4;
 const uint8_t R_A = 3, R_B = 5;
 
-//left motor’s leads are reversed intentionally
+//left motor's leads are reversed intentionally
 const uint8_t L_EN = 11,  L_FWD = 10, L_REV = 9; //L298N ENB, IN4, IN3
 const uint8_t R_EN = 6, R_FWD = 7, R_REV = 8;    //L298N ENA, IN1, IN2
 
