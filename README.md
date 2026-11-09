@@ -91,10 +91,13 @@ pio run -t upload       # build and upload
 pio device monitor      # serial monitor (115200 baud)
 ```
 
-Tests run on the board, so the hardware needs to be connected:
+`src/main.cpp` is still empty. Until it's written, each part gets tested with the [scratch sketches](#scratch-sketches).
+
+## Tests
+
+`test_vl53l1x` runs on the board, so the sensor needs to be connected and pointed at something within 4 m. It checks the sensor ID, starts ranging and makes sure the distance is in range.
 
 ```sh
-pio test -f test_servo
 pio test -f test_vl53l1x
 ```
 
@@ -120,5 +123,7 @@ pio device monitor -e scratch
 | `blink.cpp` | Blinks the onboard LED to check the board is alive |
 | `i2c_scan.cpp` | Prints the address of every device on the I2C bus |
 | `mpu_raw.cpp` | Reads raw accelerometer and gyro values from the MPU-6050 |
+| `vl53_raw.cpp` | Prints distance readings from the VL53L1X. Expect them to be about 25–30 mm short of the real distance (tested at 300, 500 and 1000 mm) |
+| `servo_sweep.cpp` | Sweeps the servo back and forth three times, then centres it. Watch that it moves smoothly |
 | `encoder_raw.cpp` | Prints both encoder counts while you spin the wheels by hand (USB only, no battery needed) |
 | `motor_test.cpp` | Runs each motor forward then backward while printing encoder counts, to check direction and wiring. Type `g` + Enter in the monitor to start and `s` + Enter to stop; a watchdog resets the board if it hangs. Wheels off the ground, battery in, and the buck converter's wire to the Arduino 5V pin disconnected |

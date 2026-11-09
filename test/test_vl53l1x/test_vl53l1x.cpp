@@ -2,7 +2,8 @@
 #include <unity.h>
 #include "Adafruit_VL53L1X.h"
 
-// VL53L1X spec: roughly 40mm min, 4000mm max in long-distance mode
+// rated for ~40-4000mm, but close objects can read under 40,
+// so anything above 0 counts as a real reading
 #define MIN_VALID_MM 1
 #define MAX_VALID_MM 4000
 
