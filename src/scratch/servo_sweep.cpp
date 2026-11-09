@@ -3,7 +3,7 @@
 
 // a hobby servo has no position feedback, so check this one by eye:
 // the horn should sweep 0 -> 180 -> 0 smoothly with no jitter or stalling,
-// then settle at 90 (centre)
+// then hold at 90 (centre) so it stays put while you mount things to it
 
 const uint8_t SERVO_PIN = 12;
 const int SWEEPS = 3;
@@ -27,10 +27,11 @@ void setup() {
     }
   }
 
-  servo.write(90);
-  delay(500); // let the horn reach centre before detaching
-  servo.detach();
-  Serial.println(F("Done, centred at 90."));
+  Serial.println(F("Done, holding at 90."));
 }
 
-void loop() {}
+// keep sending 90 so the servo actively holds centre and resists being turned
+void loop() {
+  servo.write(90);
+  delay(20);
+}
