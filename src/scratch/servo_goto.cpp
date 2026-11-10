@@ -5,12 +5,12 @@
 // then the servo sweeps from where it is to that angle at a steady speed
 //
 // decimals work too (ex. 45.5): the angle goes out as a pulse width in
-// microseconds, which gives about 0.1 degree steps instead of whole degrees,
-// but the gears have about 3 degrees of backlash so don't expect that precision
+// microseconds, which gives ~0.1 degree steps instead of whole degrees,
+// but the gears have ~3 degrees of backlash so don't expect that precision
 
 const uint8_t SERVO_PIN = 12;
 const float STEP_DEG = 0.5;    // degrees per step (smaller = smoother)
-const int STEP_DELAY_MS = 8;   // pause per step (bigger = slower), about 2.9 s for 0 -> 180
+const int STEP_DELAY_MS = 8;   // pause per step (bigger = slower), ~2.9 s for 0 -> 180
 
 // pulse widths the Servo library uses for 0 and 180 by default
 const int MIN_US = 544;
