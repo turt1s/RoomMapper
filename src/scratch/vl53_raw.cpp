@@ -1,10 +1,10 @@
 #include <Arduino.h>
 #include "Adafruit_VL53L1X.h"
 
-// readings come in about 25-30mm short of the real distance
-// (tested at 300, 500 and 1000mm)
+// readings come in about 25-30 mm short of the real distance
+// (tested at 300, 500 and 1000 mm)
 
-// XSHUT and IRQ aren't wired -- dataReady() polls over I2C instead
+// XSHUT and IRQ aren't wired, so dataReady() polls over I2C instead
 Adafruit_VL53L1X vl53 = Adafruit_VL53L1X();
 
 void setup() {

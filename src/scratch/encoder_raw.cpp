@@ -32,7 +32,8 @@ void setup() {
 }
 
 void loop() {
-  // a long is read 1 byte at a time, so pause interrupts to avoid a torn value
+  // a long is 4 bytes and gets read one byte at a time, so pause
+  // interrupts or the count could change halfway through
   noInterrupts();
   long l = leftCount;
   long r = rightCount;

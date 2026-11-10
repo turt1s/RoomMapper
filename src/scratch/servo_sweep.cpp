@@ -8,7 +8,7 @@
 const uint8_t SERVO_PIN = 12;
 const int SWEEPS = 3;
 const int STEP_DEG = 1;        // degrees per step (smaller = smoother)
-const int STEP_DELAY_MS = 15;  // pause per step (bigger = slower), ~2.7 s per half-sweep
+const int STEP_DELAY_MS = 15;  // pause per step (bigger = slower), about 2.7 s per half-sweep
 
 Servo servo;
 

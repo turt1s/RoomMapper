@@ -7,7 +7,7 @@ void setup() {
   Serial.println("Scanning I2C...");
   for (uint8_t addr = 1; addr < 127; addr++) {
     Wire.beginTransmission(addr);
-    if (Wire.endTransmission() == 0) { // 0 = device acknowledged
+    if (Wire.endTransmission() == 0) { // 0 means a device answered at this address
       Serial.print("Found device at 0x");
       Serial.println(addr, HEX);
     }
