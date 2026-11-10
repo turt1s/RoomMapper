@@ -2,12 +2,12 @@
 #include <unity.h>
 #include "Adafruit_VL53L1X.h"
 
-// rated for ~40-4000mm, but close objects can read under 40,
+// rated for about 40-4000 mm, but close objects can read under 40,
 // so anything above 0 counts as a real reading
 #define MIN_VALID_MM 1
 #define MAX_VALID_MM 4000
 
-// XSHUT and IRQ aren't wired -- dataReady() polls over I2C instead
+// XSHUT and IRQ aren't wired, so dataReady() polls over I2C instead
 Adafruit_VL53L1X vl53 = Adafruit_VL53L1X();
 
 bool sensorReady = false;
@@ -48,7 +48,7 @@ void test_distance_reading_valid(void) {
     vl53.clearInterrupt();
 
     TEST_ASSERT_NOT_EQUAL_MESSAGE(-1, distance, "distance() returned error (-1)");
-    // needs a target within ~4m (a wall, your hand)
+    // needs a target within about 4 m (a wall, your hand)
     TEST_ASSERT_INT16_WITHIN_MESSAGE((MAX_VALID_MM - MIN_VALID_MM) / 2, (MAX_VALID_MM + MIN_VALID_MM) / 2, distance,
                                      "Distance out of range -- is there a target within 4m?");
 }

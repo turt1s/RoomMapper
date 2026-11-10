@@ -125,5 +125,6 @@ pio device monitor -e scratch
 | `mpu_raw.cpp` | Reads raw accelerometer and gyro values from the MPU-6050 |
 | `vl53_raw.cpp` | Prints distance readings from the VL53L1X. Expect them to be about 25–30 mm short of the real distance (tested at 300, 500 and 1000 mm) |
 | `servo_sweep.cpp` | Sweeps the servo back and forth three times, then holds it at centre so you can mount things to it. Watch that it moves smoothly |
+| `servo_goto.cpp` | Type an angle (0–180, decimals ok) + Enter and the servo sweeps there at a steady speed. Starts at 90 |
 | `encoder_raw.cpp` | Prints both encoder counts while you spin the wheels by hand (USB only, no battery needed) |
 | `motor_test.cpp` | Runs each motor forward then backward while printing encoder counts, to check direction and wiring. Type `g` + Enter in the monitor to start and `s` + Enter to stop; a watchdog resets the board if it hangs. Wheels off the ground, battery in, and the buck converter's wire to the Arduino 5V pin disconnected |
