@@ -7,6 +7,8 @@
 
 const uint8_t SERVO_PIN = 12;
 const int SWEEPS = 3;
+const int STEP_DEG = 1;        // degrees per step (smaller = smoother)
+const int STEP_DELAY_MS = 15;  // pause per step (bigger = slower), ~2.7 s per half-sweep
 
 Servo servo;
 
@@ -17,13 +19,13 @@ void setup() {
   for (int i = 0; i < SWEEPS; i++) {
     Serial.print(F("Sweep "));
     Serial.println(i + 1);
-    for (int angle = 0; angle <= 180; angle += 5) {
+    for (int angle = 0; angle <= 180; angle += STEP_DEG) {
       servo.write(angle);
-      delay(20);
+      delay(STEP_DELAY_MS);
     }
-    for (int angle = 180; angle >= 0; angle -= 5) {
+    for (int angle = 180; angle >= 0; angle -= STEP_DEG) {
       servo.write(angle);
-      delay(20);
+      delay(STEP_DELAY_MS);
     }
   }
 
