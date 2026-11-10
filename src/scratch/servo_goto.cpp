@@ -60,14 +60,14 @@ void handleInput(const char *text) {
   Serial.print(F(" -> "));
   Serial.println(target, 1);
   sweepTo(target);
-  Serial.println(F("There. Enter another angle:"));
+  Serial.println(F("position set."));
 }
 
 void setup() {
   Serial.begin(115200);
   servo.attach(SERVO_PIN);
   writeAngle(currentAngle);
-  Serial.println(F("Servo at 90. Enter an angle 0-180 (decimals ok):"));
+  Serial.println(F("Servo at 90. Enter an angle 0-180:"));
 }
 
 void loop() {
